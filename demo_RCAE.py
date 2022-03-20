@@ -13,7 +13,7 @@ lam = 1
 #  for lam_s in [0.01, 0.1, 1, 10, 100]:
 lam_s = 0.01
 
-X, y_true, N, dim, c_true = Ifuns.load_mat("data/Face95_29v2_20200916.mat")
+X, y_true, N, dim, c_true = Ifuns.load_mat("data/Face95.mat")
 
 G = Gfuns.kng(X, knn=knn, way=graph_way, isSym=True)
 obj = RCAE(G, c_true)
@@ -24,5 +24,5 @@ acc = Mfuns.accuracy(y_true, y)
 ari = Mfuns.ari(y_true, y)
 print(f"acc = {acc:.3f}, ari = {ari}")
 
-#  paper: BinAlaph acc = 0.499
-#  run :  Binalaph acc = 0.489
+#  paper: Face95 acc = 0.990
+#  run :  Face95 acc = 0.990
